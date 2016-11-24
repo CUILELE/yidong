@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				width: 300px;
+				margin: 20px auto;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<script type="text/javascript">
+		window.onload = function (){
+			var ul = document.getElementById('ul');
+			var lis = ul.getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				lis[i].children[1].onclick = function (){
+					if(this.parentNode == ul.firstElementChild){
+						ul.appendChild(this.parentNode,ul.lastElementChild)
+					}else{
+						ul.insertBefore(this.parentNode,this.parentNode.previousElementSibling)
+					}
+				}
+				lis[i].children[2].onclick = function (){
+					if(this.parentNode == ul.lastElementChild){
+						ul.insertBefore(this.parentNode,ul.firstElementChild)
+					}else{
+						ul.insertBefore(this.parentNode.nextElementSibling,this.parentNode)
+					}
+				}
+			}
+
+
+
+//			for(var i=0;i<lis.length;i++){
+//				lis[i].children[2].onclick = function (){
+//					if(this.parentNode == ul.lastElementChild){
+//						ul.insertBefore(this.parentNode,ul.children[0])
+//					}else{
+//						ul.insertBefore(this.parentNode,ul.lastElementChild)
+//					}
+//				}
+//				lis[i].children[1].onclick = function (){
+//					if(this.parentNode == ul.firstElementChild){
+//						ul.appendChild(this.parentNode,ul.lastElementChild)
+//					}else{
+//						ul.insertBefore(this.parentNode,this.parentNode.previousElementSibling);
+//					}
+//				}
+//			}
+		}
+	</script>
+	<body>
+		<ul id="ul">
+			<li>
+				<span>1111111111：</span>
+				<input type="button" name="" id="" value="上移" />
+				<input type="button" name="" id="" value="下移" />
+			</li>
+			<li>
+				<span>2222222222：</span>
+				<input type="button" name="" id="" value="上移" />
+				<input type="button" name="" id="" value="下移" />
+			</li>
+			<li>
+				<span>3333333333：</span>
+				<input type="button" name="" id="" value="上移" />
+				<input type="button" name="" id="" value="下移" />
+			</li>
+			<li>
+				<span>4444444444：</span>
+				<input type="button" name="" id="" value="上移" />
+				<input type="button" name="" id="" value="下移" />
+			</li>
+			<li>
+				<span>5555555555：</span>
+				<input type="button" name="" id="" value="上移" />
+				<input type="button" name="" id="" value="下移" />
+			</li>
+		</ul>
+	</body>
+</html>
